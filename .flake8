@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E203,W503
+# These modules embed long SQL statements as string literals. Wrapping them
+# would change the SQL text, so long lines are allowed in these files only.
+per-file-ignores =
+    fake_job_detector/api/app.py:E501
+    fake_job_detector/utils/db_writer.py:E501
